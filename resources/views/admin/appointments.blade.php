@@ -15,6 +15,7 @@
             <th>Status</th>
             <th>Approved</th>
             <th>Cancle</th>
+            <th>Send Mail</th>
             </thead>
             
            @foreach ($data as $appo )
@@ -29,6 +30,8 @@
             <td>{{$appo->status}}</td>
             <td><a class="btn btn-success" href="{{url('approved',$appo->id)}}">Approved</a></td>
             <td><a class="btn btn-warning" href="{{url('cancel',$appo->id)}}">{{__('Cancel')}}</a></td>
+
+            <td><a class="btn btn-primary" href="{{url('send_mail',$appo->id)}}">Send</a></td>
             
         </tr>
            @endforeach

@@ -27,7 +27,7 @@ Route::middleware([
 
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/home',[HomeController::class,'redirect'])->middleware('auth','verified');
 Route::get('add_doctor_view',[AdminController::class,'doctorview']);
 Route::post('/add_doctor',[AdminController::class,'upload']);
 Route::post('/appoitment',[HomeController::class,'appoitment']);
