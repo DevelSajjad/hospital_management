@@ -1,13 +1,13 @@
 @extends('admin.master');
 @section('body')
 
-<div class="container-fluid page-body-wrapper">
-    <div class="col-6" aling="center" style="padding: 20px">
+{{-- <div class="container-fluid page-body-wrapper"> --}}
+    <div class="col-6" aling="center" style="">
         <table style="width:" class="table table-bordered">
             <thead>
-            <th>Name</th>
+            {{-- <th>Name</th> --}}
             <th>Email</th>
-            <th>Date</th>
+            {{-- <th>Date</th> --}}
             <th>Phone</th>
             <th>Message</th>
             <th>Doctor</th>
@@ -20,9 +20,9 @@
             
            @foreach ($data as $appo )
            <tr>
-            <td>{{$appo->name}}</td>
+            {{-- <td>{{$appo->name}}</td> --}}
             <td>{{$appo->email}}</td>
-            <td>{{$appo->date}}</td>
+            {{-- <td>{{$appo->date}}</td> --}}
             <td>{{$appo->phone}}</td>
             <td>{{$appo->message}}</td>
             <td>{{$appo->doctor}}</td>
@@ -37,6 +37,6 @@
            @endforeach
         </table>
       </div>
-</div>
+{{-- </div> --}}
 
 @endsection

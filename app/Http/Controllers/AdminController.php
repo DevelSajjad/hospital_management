@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Appoitment;
 use App\Models\Doctor;
 use App\Models\User;
+use App\Notifications\SendEmailNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 use function Ramsey\Uuid\v1;
 
@@ -83,5 +85,26 @@ class AdminController extends Controller
         }
         $doctor->save();
         return redirect()->back()->with('message','Update Successful');
+    }
+
+    function sendmail($id){
+        $data = Appoitment::find($id);
+        return view('admin.sendmail',compact('data'));
+    }
+
+    function sentmail(Request $request, $id){
+        $data = Appoitment::find($id);
+       
+        $details =[
+            'greeting' => $request->greeting,
+            'body'     => $request->body,
+            'actiontext' => $request->actiontext,
+            'actionurl' => $request->actionurl,
+            'endpart' => $request->endpart
+        ];
+
+        Notification::send($data,new SendEmailNotification($details));
+
+        return redirect()->back();
     }
 }
