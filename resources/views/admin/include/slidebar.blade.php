@@ -72,6 +72,15 @@
           <span class="menu-title">Appointments</span>
         </a>
       </li>
+
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{url('admin_doctors')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-speedometer"></i>
+          </span>
+          <span class="menu-title">Doctors</span>
+        </a>
+      </li>
   
     </ul>
   </nav>

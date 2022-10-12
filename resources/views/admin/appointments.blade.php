@@ -1,7 +1,7 @@
 @extends('admin.master');
 @section('body')
 
-<div class="row">
+<div class="container-fluid page-body-wrapper">
     <div class="col-6" aling="center" style="padding: 20px">
         <table style="width:" class="table table-bordered">
             <thead>
